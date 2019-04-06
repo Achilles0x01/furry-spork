@@ -16,8 +16,8 @@ def cadastrar(lista):    # Este def realiza o cadastro do usuário
                 usuario=[
                 apelido,
                 input('Primeiro nome do novo usuário: ').upper(),
-                input('Cargo sugerido: ').upper(),
-                int(input('Nível de acesso: 1, 2 ou 3: ')),
+                input('Informe o cargo do usuário: ').upper(),
+                input('Nível de acesso, exemplo: Visitante, usuario, administrativo, tecnico, super-usuario:\n').upper(),
                 input('Informe a data do último acesso, por exemplo: 06/05/2019\n').upper()
                 ]
 
@@ -69,11 +69,12 @@ def excluir(lista): # Exclui um usuário do registro
 
 def acesso(lista): # Exibir os usuários a partir do nível cadastrado
     # os.system('cls' if os== 'nt' else 'clear')
-    procurar = int(input('\nInforme o nível de acesso para encontrar usuários setados com o mesmo nível: '))
+    procurar = input('\nInforme o nível de acesso para encontrar usuários setados com o mesmo nível, exemplo: Visitante, usuario, administrativo, tecnico, super-usuario:\n').upper()
     
     for registro in lista:
-        if registro[3] == procurar:
-            print('{}'.format(registro[1]))
+        if procurar == registro[3]:
+            print('{amarelo}\nNome:{finale} {}'.format(registro[1], **cores))
+            print('{amarelo}Cargo:{finale} {}'.format(registro[2], **cores))
 
 def horaData(lista): # Exibi as informações de ultimo acesso 
     # os.system('cls' if os== 'nt' else 'clear')
