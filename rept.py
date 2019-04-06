@@ -13,6 +13,7 @@ os.system('cls' if os== 'nt' else 'clear')  # Limpa a tela considerando o sistem
 registros = [] # Realiza o armazenamento das informações 
 opcoes = 0 # op do menu
 
+
 try: 
 
     while(opcoes <= 6):
@@ -24,8 +25,8 @@ try:
         print('{amarelo}[2]{finale} - Modo de busca, procura um usuário a partir do apelido inserido.'.format(**cores))
         print('{amarelo}[3]{finale} - Exibir quantidade de usuários cadastrados.'.format(**cores))
         print('{amarelo}[4]{finale} - Modo de exclusão, capaz de excluir um usuário.'.format(**cores))
-        print('{amarelo}[5]{finale} - Nível acesso no sistema'.format(**cores))
-        print('{amarelo}[6]{finale} - Exibe apenas usuários com classificação administrativa.'.format(**cores))
+        print('{amarelo}[5]{finale} - Nível de acesso no sistema'.format(**cores))
+        print('{amarelo}[6]{finale} - Data de ultimo acesso.'.format(**cores))
 
         opcoes = (int(input('\nDigite uma das opções, de 1-6: ')))
 
@@ -49,6 +50,8 @@ try:
 
         else:
             print('Op invalida padawan')
+
+
 
 except KeyboardInterrupt:
     print('\n{verde}{italic}Saindo do sistema{finale}'.format(**cores))
