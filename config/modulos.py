@@ -14,8 +14,8 @@ def cadastrar(lista):    # Este def realiza o cadastro do usuário
             apelido = input('\nDigite um apelido ou nome abreviado: ').upper()
             if apelido not in validacao:
                 usuario=[
+                input('Informe o nome completo: ').upper(),
                 apelido,
-                input('Primeiro nome do novo usuário: ').upper(),
                 input('Informe o cargo do usuário: ').upper(),
                 input('Nível de acesso, exemplo: Visitante, usuario, administrativo, tecnico, super-usuario:\n').upper(),
                 input('Informe a data do último acesso, por exemplo: 06/05/2019\n').upper()
@@ -37,9 +37,9 @@ def buscar(lista): # Sistema de busca
     procurar = input('Digite o apelido escolhido pelo usuário: ').upper()
 
     for registro in lista:
-        if procurar == registro[0]:
-            print('{amarelo}\nNome...: {finale}{}'.format(registro[1], **cores))
-            print('{amarelo}Apelido: {finale}{}'.format(registro[0], **cores))
+        if procurar == registro[1]:
+            print('{amarelo}\nNome...: {finale}{}'.format(registro[0], **cores))
+            print('{amarelo}Apelido: {finale}{}'.format(registro[1], **cores))
             print('{amarelo}Cargo..: {finale}{}'.format(registro[2], **cores))
         else:
             print('{amarelo}\n§ Usuário não encontrado §{finale}'.format(**cores))
@@ -57,10 +57,10 @@ def sudos(lista): # Exibi a quantidade de usuários no sistema
 
 def excluir(lista): # Exclui um usuário do registro 
     # os.system('cls' if os== 'nt' else 'clear')
-    procurar = input('\nApelido do usuário que deseja realizar a exclusão: ').upper()
+    procurar = input('\nInforme o apelido do usuário que deseja realizar a exclusão: ').upper()
 
     for registro in lista:
-        if registro[0] == procurar:
+        if registro[1] == procurar:
             lista.remove(registro)
             print('{verde}Exclusão bem sucedida.{finale}'.format(**cores))
         else:
@@ -73,7 +73,7 @@ def acesso(lista): # Exibir os usuários a partir do nível cadastrado
     
     for registro in lista:
         if procurar == registro[3]:
-            print('{amarelo}\nNome:{finale} {}'.format(registro[1], **cores))
+            print('{amarelo}\nNome.:{finale} {}'.format(registro[0], **cores))
             print('{amarelo}Cargo:{finale} {}'.format(registro[2], **cores))
 
 def horaData(lista): # Exibi as informações de ultimo acesso 
@@ -89,7 +89,7 @@ def horaData(lista): # Exibi as informações de ultimo acesso
 
     for registro in lista:
         if registro[4] == procurar:
-            print('O usuário {} acessou o sistema nesta data'.format(registro[0]))
+            print('O usuário {} acessou o sistema nesta data'.format(registro[1]))
 
         else:
             print('{amarelo}Não foi encontrado nenhum outro registro{finale}'.format(**cores))
