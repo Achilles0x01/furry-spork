@@ -11,14 +11,14 @@ def cadastrar(lista):    # Este def realiza o cadastro do usuário
         validador = False 
         while validador != True:
             
-            apelido = input('Digite um apelido ou nome abreviado: ').upper()
+            apelido = input('\nDigite um apelido ou nome abreviado: ').upper()
             if apelido not in validacao:
                 usuario=[
                 apelido,
                 input('Primeiro nome do novo usuário: ').upper(),
-                input('Cargo: ').upper(),
+                input('Cargo sugerido: ').upper(),
                 int(input('Nível de acesso: 1, 2 ou 3: ')),
-                input('Informe a data do últimno acesso, por exemplo: 06/05/2019\n').upper()
+                input('Informe a data do último acesso, por exemplo: 06/05/2019\n').upper()
                 ]
 
                 print('{verde}\nCadastro realizado com sucesso.{finale}'.format(**cores))
@@ -49,8 +49,8 @@ def sudos(lista): # Exibi a quantidade de usuários no sistema
     inicio = 0
 
     for registro in lista:
-        if registro[3] == 'S':
-            print('\nO nível de acesso do usuário {} é {}.'.format(registro[0], registro[3]))
+        if registro[3] == registro[3]:
+            print('\nO nível de acesso do usuário {} é {}.'.format(registro[0], registro[2]))
         inicio  = inicio + 1
     print('\nTotal de usuários: '+ str(inicio))
 
@@ -69,7 +69,7 @@ def excluir(lista): # Exclui um usuário do registro
 
 def acesso(lista): # Exibir os usuários a partir do nível cadastrado
     # os.system('cls' if os== 'nt' else 'clear')
-    procurar = int(input('\nInforme o nínel de acesso: '))
+    procurar = int(input('\nInforme o nível de acesso para encontrar usuários setados com o mesmo nível: '))
     
     for registro in lista:
         if registro[3] == procurar:
