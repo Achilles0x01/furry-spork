@@ -13,7 +13,6 @@ os.system('cls' if os== 'nt' else 'clear')  # Limpa a tela considerando o sistem
 registros = [] # Realiza o armazenamento das informações 
 opcoes = 0 # op do menu
 
-
 try: 
 
     while(opcoes <= 6):
@@ -50,8 +49,6 @@ try:
 
         else:
             print('Op invalida padawan')
-
-
 
 except KeyboardInterrupt:
     print('\n{verde}{italic}Saindo do sistema{finale}'.format(**cores))
