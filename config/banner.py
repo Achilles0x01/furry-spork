@@ -15,6 +15,7 @@ exibir = """
 Gerenciador de usuários desenvolvido como trabalho academico para a FIAP
 
 Author: Henrique Galdino {italic}a.k.a{finale} Achilles
+Author: Iohan Pereira
 {verde}{italic}Blog{finale}: achilles0x01.github.io
 
 Para sair: CTRL + C
