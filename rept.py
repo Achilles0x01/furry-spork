@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Henrique Galdino RM 82723
-# Iohan Pereira    RM 81869
 
 import os
 from config import banner as arte
